@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AppareilComponent implements OnInit {
     // appareilName = 'Machine à laver';
     @Input() appareilName: string;
-    @Input() appareilSatus: string;
+    @Input() appareilStatus: string;
 
     constructor() {
     }
@@ -17,7 +17,15 @@ export class AppareilComponent implements OnInit {
     }
 
     getSatus() {
-        return this.appareilSatus;
+        return this.appareilStatus;
+    }
+
+    getColor() {
+        if (this.appareilStatus === 'allumé') {
+            return 'green';
+        } else {
+            return 'red';
+        }
     }
 
 }
